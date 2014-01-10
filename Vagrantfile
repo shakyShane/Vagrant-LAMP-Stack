@@ -60,9 +60,6 @@
           # Project name
           :name           => project_name,
 
-          # Name of MySQL database that should be created
-          :db_name        => "dbname",
-
           # Server name and alias(es) for Apache vhost
           :server_name    => project_name + ".local",
           :server_aliases =>  [ "www." + project_name + ".local" ],
@@ -72,16 +69,9 @@
 
           # General packages
           :packages   => %w{ vim git screen curl },
-          
+
           # PHP packages
-          :php_packages   => %w{ php5-mysqlnd php5-curl php5-mcrypt php5-memcached php5-gd }
-        },
-        :mysql => {
-          :server_root_password   => database_password,
-          :server_repl_password   => database_password,
-          :server_debian_password => database_password,
-          :bind_address           => ip_address,
-          :allow_remote_root      => true
+          :php_packages   => %w{ php5-mysqlnd php5-curl php5-mcrypt php5-memcached php5-gd php5-json php5-sqlite}
         }
       }
     end

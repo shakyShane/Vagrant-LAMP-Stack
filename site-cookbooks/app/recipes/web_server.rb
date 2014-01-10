@@ -35,3 +35,10 @@ bash "composer" do
     sudo mv composer.phar /usr/local/bin/composer
   EOH
 end
+
+bash "l4" do
+  code <<-EOH
+    cd /var/www/projectname
+    composer create-project laravel/laravel public --prefer-dist
+  EOH
+end
